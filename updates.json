@@ -1,0 +1,12 @@
+{
+  "addons": {
+    "mathfetch@extension.local": {
+      "updates": [
+        {
+          "version": "1.14.3",
+          "update_link": "https://github.com/ashuponstars/mathkaboom/releases/download/idk/mathkaboom1.14.3.xpi"
+        }
+      ]
+    }
+  }
+}
