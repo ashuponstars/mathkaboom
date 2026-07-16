@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script src="popup.bundle.js"></script>
+    <h1 id="title">MathKaboom Config</h1>
+    <div>
+        <div class="border">
+            <img src="new_icon.png" alt="">
+        </div>
+    </div>
+    <div>
+        <h2 style="font-size: 20px; font-family: Gabarito;" id="adjustdelay">Adjust delay</h2>
+        <div class="main">
+            <div class="slidercontainer">
+                <input type="range" min="4" max="100" value="10" class="slider" id="slider">
+            </div>
+            <div id="freetrial" class="contributions">
+                <span style="font-size: 1.25rem;">Free Trial Activated</span>
+                <p>Account expires on:</p>
+                <span id="expirydate">no value</span>
+                <span id="daystoexpiry">no value</span>
+            </div>
+            <div class="contributions">
+                <span class="contribution-label">Contributions</span>
+                <span class="contribution-number" id="contributions">0</span>
+            </div>
+            <button class="button-68 fancy-button" id="update" role="button"
+                style="font-size: large !important; display: flex; width: 80%;">Update</button>
+            <button class="button-68 fancy-button" id="donate"
+                style="font-size: large !important; display: flex; width: 80%;">Donate</button>
+            <div id="loginLoading">
+                <p>Loading Login Form</p>
+            </div>
+            <div id="apikeyContainer">
+                <label for="apikey">Flash 2.5 API Key</label>
+                <input type="text" id="apikey">
+                <label for="apikey" id="apikeySubmittedLabel">submitted</label>
+                <button class="button-68" id="aiActiveButton">AI Active</button>
+            </div>
+            <form id="loginform" style="display: flex;">
+                <input type="text" placeholder="username" style="font-family: Gabarito;" id="username">
+                <input type="text" placeholder="password" style="font-family: Gabarito;" id="password">
+                <button class="button-68" style="background-color: #16a34a; padding: 5px;" id="login">login</button>
+                <div style="margin: auto; display: flex; justify-content: center; align-items: center; flex-direction: row; height: 50px; width: 80%;"
+                    class="button-68">
+                    <p style="font-family: Gabarito; user-select: none;" id="registerButton">Register?</p>
+                    <input type="checkbox" id="register" style="pointer-events: none;">
+                </div>
+            </form>
+            <button class="button-68" style="background-color: #e11d48; display: none; margin-bottom: 2rem;"
+                id="signout">Sign Out</button>
+        </div>
+    </div>
+</body>
+
+</html>

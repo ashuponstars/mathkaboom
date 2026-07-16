@@ -1,0 +1,67 @@
+{
+    "manifest_version": 2,
+    "name": "mathkaboom",
+    "description": "sparx be no more",
+    "version": "1.14.3",
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "mathfetch@extension.local",
+            "strict_min_version": "109.0"
+        }
+    },
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'self'",
+
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "new_icon.png"
+    },
+
+    "icons": {
+        "16": "new_icon.png",
+        "32": "new_icon.png",
+        "48": "new_icon.png",
+        "128": "new_icon.png"
+    },
+
+    "background": {
+        "scripts": ["service_worker.bundle.js"],
+        "persistent": false
+    },
+
+    "content_scripts": [
+        {
+            "js": ["image_fix.js"],
+            "matches": [
+                "https://maths.sparx-learning.com/student/*",
+                "https://sparxmaths.uk/student*"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "js": ["content.bundle.js"],
+            "matches": [
+                "https://maths.sparx-learning.com/student/*",
+                "https://sparxmaths.uk/student*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+
+    "permissions": [
+        "activeTab",
+        "storage",
+        "alarms",
+        "tabs",
+        "https://mathfetch.netlify.app/*",
+        "https://generativelanguage.googleapis.com/*",
+        "https://cdn.sparx-learning.com/*",
+        "https://assets.sparxhomework.uk/*"
+    ],
+
+    "web_accessible_resources": [
+        "/notification.mp3",
+        "/times_tables.bundle.js"
+    ]
+}
